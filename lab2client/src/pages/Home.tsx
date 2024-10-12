@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 const Home: React.FC = () => {
 	return (
 		<div className="flex flex-col items-center space-y-4">
-			<h1 className="text-2xl font-bold">Lab Work 2</h1>
+			<h1 className="text-2xl font-bold">Mobile App - Lab 2</h1>
 			<Link to="/smartphones">
 				<Button>Smartphones</Button>
 			</Link>
@@ -14,6 +14,9 @@ const Home: React.FC = () => {
 			</Link>
 			<Link to="/geoservice">
 				<Button>Geoservice</Button>
+			</Link>
+			<Link to="/about-me">
+				<Button>About me</Button>
 			</Link>
 		</div>
 	);

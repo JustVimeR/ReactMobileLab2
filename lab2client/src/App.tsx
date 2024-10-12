@@ -4,6 +4,7 @@ import SmartphonesTable from "./pages/SmartphonesTable";
 import Home from "./pages/Home";
 import ContactsTable from "./pages/ContactsTable";
 import Geoservice from "@/components/Geoservice";
+import AboutMe from "./pages/AboutMe";
 
 const App: React.FC = () => {
 	return (
@@ -13,6 +14,7 @@ const App: React.FC = () => {
 				<Route path="/smartphones" element={<SmartphonesTable />} />
 				<Route path="/contacts" element={<ContactsTable />} />
 				<Route path="/geoservice" element={<Geoservice />} />
+				<Route path="/about-me" element={<AboutMe />} />
 			</Routes>
 		</Router>
 	);
