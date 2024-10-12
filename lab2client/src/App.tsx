@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import SmartphonesTable from "./pages/SmartphonesTable";
-import Geoservice from "./components/Geoservice";
 import Home from "./pages/Home";
 import ContactsTable from "./pages/ContactsTable";
+import Geoservice from "@/components/Geoservice";
 
 const App: React.FC = () => {
 	return (
