@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import {
 	GoogleMap,
 	LoadScript,
 	DirectionsRenderer,
 } from "@react-google-maps/api";
 import axios from "axios";
+import { Button } from "./ui/button";
 
 interface Smartphone {
 	id: string;
@@ -19,7 +21,7 @@ const GOOGLE_MAPS_KEY = import.meta.env.VITE_GOOGLE_MAPS_KEY;
 
 const mapContainerStyle = {
 	width: "100%",
-	height: "400px",
+	height: "800px",
 };
 
 const defaultCenter = {
@@ -151,9 +153,14 @@ const GeoService: React.FC = () => {
 
 	return (
 		<div>
-			<h1>GeoService</h1>
+			<Button asChild>
+				<Link to="/">Go to Home</Link>
+			</Button>
+			<h1 className="text-2xl font-bold mb-4">GeoService</h1>
 
-			<label htmlFor="warehouse-select">Select Warehouse:</label>
+			<label htmlFor="warehouse-select" className="text-lg font-bold mb-4">
+				Select Warehouse:
+			</label>
 			<select id="warehouse-select" onChange={handleWarehouseChange}>
 				<option value="">Select a warehouse</option>
 				{smartphones.map((smartphone, index) => (
@@ -166,7 +173,7 @@ const GeoService: React.FC = () => {
 				))}
 			</select>
 
-			<button onClick={handleLocationFetch}>Get Current Location</button>
+			<Button onClick={handleLocationFetch}>Get Current Location</Button>
 
 			{error && <p style={{ color: "red" }}>{error}</p>}
 

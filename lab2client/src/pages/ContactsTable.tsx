@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import { Button } from "@/components/ui/button";
 import {
@@ -45,6 +46,9 @@ const ContactsTable: React.FC = () => {
 
 	return (
 		<div className="p-6">
+			<Button asChild>
+				<Link to="/">Go to Home</Link>
+			</Button>
 			<h1 className="text-xl font-bold mb-4">
 				{showLongLastNames ? "Contacts with Long Last Names" : "All Contacts"}
 			</h1>

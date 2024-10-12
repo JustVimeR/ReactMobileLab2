@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useCallback } from "react";
+import { Link } from "react-router-dom";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import {
@@ -98,6 +99,9 @@ const SmartphonesTable: React.FC = () => {
 
 	return (
 		<div className="p-6">
+			<Button asChild>
+				<Link to="/">Go to Home</Link>
+			</Button>
 			<h1 className="text-xl font-bold mb-4">Smartphones</h1>
 
 			<SmartphoneForm onSuccess={fetchSmartphonesData} />
@@ -109,6 +113,7 @@ const SmartphonesTable: React.FC = () => {
 					onChange={(e) => setFilterModel(e.target.value)}
 				/>
 				<Input
+					className="mt-4"
 					placeholder="Minimum screen size"
 					type="number"
 					value={minScreenSize}
