@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const connectDB = require("./config/db");
 const smartphoneRoutes = require("./routes/smartphoneRoutes");
+const contactRoutes = require("./routes/contactRoutes");
 
 const app = express();
 
@@ -12,6 +13,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.use("/api", smartphoneRoutes);
+app.use("/api/contacts", contactRoutes);
 
 const PORT = process.env.PORT || 5000;
 
