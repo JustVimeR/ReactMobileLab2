@@ -20,7 +20,6 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-        working-directory: lab2client
 
       - name: Set environment variables
         run: |
@@ -29,10 +28,9 @@ jobs:
 
       - name: Build project
         run: npm run build
-        working-directory: lab2client
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: lab2client/dist
+          publish_dir: /dist
