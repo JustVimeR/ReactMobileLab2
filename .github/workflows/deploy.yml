@@ -24,8 +24,8 @@ jobs:
 
       - name: Set environment variables
         run: |
-          echo "REACT_APP_API_KEY=${{ secrets.VITE_API_URL }}" >> $GITHUB_ENV
-          echo "REACT_APP_API_URL=${{ secrets.VITE_GOOGLE_MAPS_KEY }}" >> $GITHUB_ENV
+          echo "VITE_API_URL=${{ secrets.VITE_API_URL }}" >> $GITHUB_ENV
+          echo "VITE_GOOGLE_MAPS_KEY=${{ secrets.VITE_GOOGLE_MAPS_KEY }}" >> $GITHUB_ENV
 
       - name: Build project
         run: npm run build
