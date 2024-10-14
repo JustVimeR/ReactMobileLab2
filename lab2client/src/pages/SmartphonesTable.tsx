@@ -88,6 +88,12 @@ const SmartphonesTable: React.FC = () => {
 		setFilteredSmartphones(filtered);
 	};
 
+	const resetFilter = () => {
+		setFilterModel("");
+		setMinScreenSize(0);
+		setFilteredSmartphones(smartphones);
+	};
+
 	const calculateAverageScreenSize = () => {
 		if (filteredSmartphones.length === 0) return 0;
 		const totalScreenSize = filteredSmartphones.reduce(
@@ -121,6 +127,9 @@ const SmartphonesTable: React.FC = () => {
 				/>
 				<Button onClick={filterSmartphones} className="mt-2">
 					Apply Filter
+				</Button>
+				<Button onClick={resetFilter} className="mt-2 ml-2">
+					Reset Filter
 				</Button>
 			</div>
 
