@@ -30,6 +30,7 @@ const defaultCenter = {
 };
 
 const GeoService: React.FC = () => {
+	const BASE_URL = import.meta.env.VITE_API_URL;
 	const [smartphones, setSmartphones] = useState<Smartphone[]>([]);
 	const [selectedWarehouse, setSelectedWarehouse] = useState<string>("");
 	const [origin, setOrigin] = useState<{ lat: number; lng: number } | null>(
@@ -49,7 +50,7 @@ const GeoService: React.FC = () => {
 
 	useEffect(() => {
 		axios
-			.get("http://localhost:5000/api/smartphones")
+			.get(`${BASE_URL}/smartphones`)
 			.then((response) => {
 				setSmartphones(response.data);
 			})

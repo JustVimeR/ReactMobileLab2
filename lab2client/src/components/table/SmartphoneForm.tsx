@@ -9,6 +9,8 @@ interface SmartphoneFormProps {
 }
 
 const SmartphoneForm: React.FC<SmartphoneFormProps> = ({ onSuccess }) => {
+
+	const BASE_URL = import.meta.env.VITE_API_URL;
 	const [form, setForm] = useState({
 		manufacturer: "",
 		model: "",
@@ -43,7 +45,7 @@ const SmartphoneForm: React.FC<SmartphoneFormProps> = ({ onSuccess }) => {
 		if (!validateForm()) return;
 
 		try {
-			await axios.post("http://localhost:5000/api/smartphones", form);
+			await axios.post(`${BASE_URL}/smartphones`, form);
 			setForm({
 				manufacturer: "",
 				model: "",
