@@ -20,14 +20,14 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-        working-directory: ./ReactMobileLab2
+        working-directory: lab2client
 
       - name: Build project
         run: npm run build
-        working-directory: ./ReactMobileLab2
+        working-directory: lab2client
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./ReactMobileLab2/dist
+          publish_dir: lab2client/dist
